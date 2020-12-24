@@ -1,0 +1,21 @@
+<input type="text" [(ngModel)]="title"> {{title}}
+<div *ngIf="title!='amaru'">
+    this is a div
+</div>
+<button (click)="addItem()">Add item</button>
+<ul>
+    <li *ngIf="items.length === 0">La lista esta vacia</li>
+
+    <li *ngFor="let name of items; index as i">
+
+        {{i}} {{name}}
+        <button (click)="deleteItem(i)">delete</button>
+    </li>
+</ul>
+
+<div *ngFor="let product of products">
+    {{product.title}}
+    <img [src]="product.image" alt=""> {{product.image}} {{product.price}}
+
+
+</div>
