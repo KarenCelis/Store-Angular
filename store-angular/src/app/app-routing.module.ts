@@ -3,15 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 import {HomeComponent} from './home/home.component';
 import {ProductsComponent} from './products/products.component';
+import {ContactComponent} from './contact/contact.component';
 
 const routes: Routes = [
 {
-  path: '/home',
+  path: 'home',
   component: HomeComponent},
 
   
-  {path: '/products',
-  component: ProductsComponent}
+  {path: 'products',
+  component: ProductsComponent},
+   
+  {path: 'contact',
+  component: ContactComponent}
 
 ];
 
