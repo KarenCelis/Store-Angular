@@ -11,11 +11,7 @@ export class DemoComponent implements OnInit {
   items = ['Antu', 'Amaru', 'Morgan'];
 
   power = 10;
-
-  
 ngOnInit(){
-
-  
 }
   addItem(){
   this.items.push('nuevo item');
