@@ -1,28 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    margin: 0px;
-    padding: 0px;
-}
-.product-grid{
 
-display: grid;
-grid-template-columns: repeat(1,1fr);
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
 }
 
-@media (min-width: 326px){
-    .product-grid{
-
+@media (min-width: 576px) {
+    .product-grid {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        }
-    
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
 }
 
-@media (min-width: 594px){
-    .product-grid{
+html,
+body {
+    height: 100%;
+}
 
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        }
-    
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
