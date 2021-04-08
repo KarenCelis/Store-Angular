@@ -19,28 +19,44 @@ export class ProductDetailComponent implements OnInit {
 
       const id = params.id;
       this.fetchProduct(id);
-     // this.product = this.productsService.getProduct(id) as Product;
+      // this.product = this.productsService.getProduct(id) as Product;
 
     });
   }
-  fetchProduct(id : string){
+  fetchProduct(id: string) {
     this.productsService.getProduct(id).subscribe(product => {
-     this.product = product
+      this.product = product
     })
 
   }
-  createProduct(){
+  createProduct() {
 
-    const newProduct : Product={
-id : '123',
-title : 'nuvveooo ',
-image : 'assets/images/banner-1.jpg',
-price : 5000,
-description: 'newwwww'
+    const newProduct: Product = {
+      id: '123',
+      title: 'nuvveooo ',
+      image: 'assets/images/banner-1.jpg',
+      price: 5000,
+      description: 'newwwww'
     }
     this.productsService.createProduct(newProduct).subscribe(product => {
       console.log(product)
-     })
+    });
   }
+  updateProduct() {
+    const updateProduct: Partial<Product> = {
+      price: 3000,
+      description: 'edicion titulo'
+    }
+    this.productsService.updateProduct('2', updateProduct).subscribe(product => {
+      console.log(product)
+    });
+  }
+
+  deleteProduct(){
+    this.productsService.deleteProduct('123').subscribe(rta=>{
+      console.log(rta)
+    });
+  }
+
 
 }
