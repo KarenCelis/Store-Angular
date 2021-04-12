@@ -1,0 +1,37 @@
+<form action="" [formGroup]="form" (ngSubmit)="login($event)">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Login
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="E-mail" formControlName="email" matInput type="email" name="" id="">
+                    </mat-form-field>
+                    <mat-error *ngIf="EmailField!.errors && EmailField!.dirty">
+                        <p *ngIf="EmailField!.hasError('email')">this is invalid</p>
+                        <p *ngIf="EmailField!.hasError('required')">this is required</p>
+                    </mat-error>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Password" formControlName="pw" matInput type="password" name="" id="">
+                    </mat-form-field>
+                    <mat-error *ngIf="PwField!.errors && PwField!.dirty">
+                        <p *ngIf="PwField!.hasError('pattern')">this is invalid</p>
+                        <p *ngIf="PwField!.hasError('required')">this is required</p>
+                    </mat-error>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

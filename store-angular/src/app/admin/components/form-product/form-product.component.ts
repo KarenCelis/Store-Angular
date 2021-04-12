@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from './../../../core/services/products/products.service'
-import {Router} from '@angular/router';
-import {MyValidators} from './../../../utils/validators';
+import { Router } from '@angular/router';
+import { MyValidators } from './../../../utils/validators';
 @Component({
   selector: 'app-form-product',
   templateUrl: './form-product.component.html',
@@ -10,7 +10,7 @@ import {MyValidators} from './../../../utils/validators';
 })
 export class FormProductComponent implements OnInit {
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder, private productsService: ProductsService, private router : Router) {
+  constructor(private formBuilder: FormBuilder, private productsService: ProductsService, private router: Router) {
     this.buildForm();
   }
 
@@ -36,5 +36,8 @@ export class FormProductComponent implements OnInit {
       image: [''],
       description: ['', [Validators.required]],
     });
+  }
+  get PriceField() {
+    return this.form.get('price');
   }
 }
